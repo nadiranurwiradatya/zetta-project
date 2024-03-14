@@ -1,0 +1,50 @@
+.kotak-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Jarak antar kotak */
+    position: relative;
+    margin-top: 30px;
+  }
+  
+  .kotak {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .kotak::before {
+    content: '';
+    width: 60px;
+    height: 60px;
+    background-color: rgb(225, 225, 225);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .kotak:hover::before {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .kotak:hover::after {
+    content: '';
+    width: 90px;
+    height: 90px;
+    background-color: rgb(225, 225, 225);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .kotak:hover {
+    background-color: rgb(225, 225, 225);
+  }
+  
