@@ -1,0 +1,340 @@
+.banner {
+  bottom: 50px;
+  background-image: url(https://www.blibli.com/friends-backend/wp-content/uploads/2023/07/B700348-1-Mengenal-Lebih-Jauh-Team-ONIC-yang-Lagi-Populer-scaled.jpg);
+  right: 20px;
+  position: relative;
+  transform: rotate(-3deg);
+  width: 100.7vw;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  /* background-image: url(https://www.blibli.com/friends-backend/wp-content/uploads/2023/07/B700348-1-Mengenal-Lebih-Jauh-Team-ONIC-yang-Lagi-Populer-scaled.jpg); */
+}
+.banner-layer {
+  bottom: 350px;
+  background-color: #ffd000;
+  opacity: 90%;
+  right: 20px;
+  position: relative;
+  transform: rotate(-3deg);
+  width: 100.7vw;
+  height: 300px;
+}
+.status {
+  font-family: poppins;
+  font-style: italic;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 60px;
+  margin-left: 100px;
+  margin-top: 160px;
+}
+.welcome {
+  font-family: poppins;
+  font-style: italic;
+  font-weight: 700;
+  color: #000000;
+  font-size: 80px;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+.title {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+}
+.home {
+  position: absolute;
+  margin-left: 86%;
+  margin-top: 20px;
+}
+.home:hover {
+  border-bottom: solid #fff 2px;
+}
+.player {
+  position: absolute;
+  margin-left: 93%;
+  margin-top: 20px;
+}
+.search {
+  border-radius: 20px;
+  position: absolute;
+  top: 300px;
+  left: 370px;
+  z-index: 9;
+  width: 500px;
+  height: 40px;
+}
+.player:hover {
+  border-bottom: solid #fff 2px;
+}
+.full-container {
+  background-color: rgb(255, 255, 255);
+  width: 98.7vw;
+  height: 98vw;
+  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/001/225/154/small/black-low-poly-geometric-background.jpg);
+}
+.menu-container {
+  margin-top: 60px;
+  top: 300px;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  padding: 20px;
+  margin-left: 10px;
+  justify-content: center;
+}
+.menu-card {
+  justify-content: center;
+  border: 1px solid rgb(255, 213, 0); /* background-image: url(https://i.pinimg.com/originals/8e/f4/01/8ef401c52bc53b1c762f8fb82f64897a.jpg); */
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover; /* Mengatur gambar agar menutupi seluruh area */
+  background-position: center; /* Posisikan gambar di tengah */
+  position: relative;
+  width: 210px;
+  height: 15.5em;
+  cursor: pointer;
+  /* Menggunakan timing ease-in-out */
+  padding-bottom: 3.4em;
+  overflow: hidden;
+  object-fit: cover;
+  margin: 0px; /* Menengahkan teks */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.menu-card:active {
+  top: 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.menu-card:hover {
+  background-color: rgb(255, 200, 0);
+}
+.menu-card .player-name {
+  transition: all 0.3s ease-in-out;
+}
+.menu-card .origin {
+  transition: all 0.3s ease-in-out;
+}
+.menu-card:hover .origin {
+  color: rgb(
+    255,
+    255,
+    255
+  ); /* Mengubah warna teks origin menjadi putih */ /* Mengubah warna latar belakang origin menjadi putih */
+}
+
+.menu-card:hover .player-name {
+  color: #000000; /* Mengubah warna teks player-name menjadi putih */
+}
+.menu-card:hover .player-role {
+  color: #000000;
+  bottom: 25px;
+  margin-left: 5px;
+  font-style: italic; /* Menempatkan teks di atas gambar */
+}
+.menu-card:hover .player-image {
+  filter: grayscale(0%);
+}
+.menu-card .player-image {
+  position: absolute; /* Mengatur posisi absolut untuk gambar */
+  top: 10px;
+  left: 90px;
+  width: 200px;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  padding: 0px;
+  filter: grayscale(100%); /* Mengubah gambar menjadi hitam putih */
+}
+.player-country {
+  width: 50px;
+  height: 30px;
+  margin-left: 10px;
+  margin-top: 10px;
+  position: absolute;
+}
+.menu-card .player-details {
+  position: relative; /* Mengatur posisi relatif untuk konten teks */
+  z-index: 1; /* Menempatkan teks di atas gambar */
+}
+
+.player-name {
+  color: rgba(35, 29, 127, 0); /* Teks tidak terlihat */
+  font-size: 70px;
+  bottom: 10px;
+  right: 30px;
+  margin-top: 170px;
+  font-family: poppins;
+  font-style: italic;
+  /* -webkit-text-stroke: 1px rgb(255, 230, 0); */
+  /* Outline teks dengan ketebalan 3px dan warna putih */
+}
+
+.player-age {
+  color: white;
+  font-size: 30px;
+}
+.origin {
+  color: rgb(0, 0, 0);
+  z-index: 5;
+  position: relative;
+  width: 300px;
+  height: 90px;
+  font-size: 32px;
+  text-align: start;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  margin-top: 220px;
+}
+
+.player-role {
+  bottom: 25px;
+  margin-left: 5px;
+  color: #ffffff;
+  font-family: poppins;
+  position: absolute;
+  font-style: italic;
+}
+.tambah-player {
+  background-image: url(https://i.pinimg.com/originals/8e/f4/01/8ef401c52bc53b1c762f8fb82f64897a.jpg);
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover; /* Mengatur gambar agar menutupi seluruh area */
+  background-position: center; /* Posisikan gambar di tengah */
+  position: relative;
+  width: 210px;
+  height: 15.5em;
+  cursor: pointer; /* Menggunakan timing ease-in-out */
+  padding-bottom: 3.4em;
+  margin-bottom: 60px;
+  overflow: hidden;
+  object-fit: cover;
+  margin: 0px; /* Menengahkan teks */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.tambah-player:hover .add-player-image {
+  transform: scale(1.05);
+  position: inherit;
+}
+.tambah-player:active {
+  top: 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.tambah-player .add-player-image {
+  transition: all 0.3s ease-in-out;
+}
+.add-player-image {
+  position: absolute; /* Mengatur posisi absolut untuk gambar */
+  top: 20px;
+  bottom: 100px; /* Meletakkan gambar di atas teks */
+  left: 25px;
+  bottom: 20px;
+  width: 150px;
+  height: 270px;
+  object-fit: cover;
+  z-index: 1;
+  padding: 0px;
+}
+.add-player-text {
+  color: rgb(0, 0, 0);
+  z-index: 5;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  width: 300px;
+  height: 90px;
+  font-size: 32px;
+  text-align: start;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  margin-top: 220px;
+}
+.add-player-text > p {
+  max-width: 100px;
+  margin-left: 10px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 210px;
+  height: 18.5em;
+  perspective: 1000px;
+  font-family: sans-serif;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgb(255, 213, 0);
+}
+
+.flip-card-front {
+  background-color: black;
+
+  color: rgb(255, 213, 0);
+}
+
+.flip-card-back {
+  background-color: #000000;
+  color: white;
+  transform: rotateY(180deg);
+}
+.container-input {
+  position: absolute;
+  left: 100px;
+  bottom: 350px;
+  z-index: 8;
+}
+
+.input {
+  width: 300px;
+  padding: 10px 0px 10px 40px;
+  border-radius: 9999px;
+  border: solid 1px #333;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  opacity: 1;
+}
+
+.container-input svg {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+}
+
+.input:focus {
+  opacity: 1;
+  width: 400px;
+}

@@ -1,0 +1,297 @@
+<div class="full-container">
+  <nav>
+    <img
+      class="logo"
+      src="assets/img/logo.png"
+      alt=""
+      srcset=""
+      style="
+        width: 70px;
+        height: 45px;
+        position: absolute;
+        top: 10px;
+        left: 40px;
+        z-index: 5;
+      "
+    />
+    <div class="player" (click)="goToPlayer()">< Back To Player</div>
+  </nav>
+
+  <form [formGroup]="playerForm" (ngSubmit)="onSubmit()">
+    <div class="core-form-container">
+      <div class="input_container">
+        <label class="input_label" for="nickname">Nickname:</label>
+        <input
+          type="text"
+          id="nickname"
+          formControlName="nickname"
+          class="input_field"
+          placeholder="Nickname"
+        />
+        <div
+          *ngIf="
+            playerForm.get('nickname')?.invalid &&
+            playerForm.get('nickname')?.touched
+          "
+        >
+          <p *ngIf="playerForm.get('nickname')?.errors?.['required']">
+            Nickname is required.
+          </p>
+        </div>
+      </div>
+
+      <div class="input_container">
+        <label class="input_label" for="origin">Origin:</label>
+        <input
+          type="text"
+          id="origin"
+          formControlName="origin"
+          class="input_field"
+          placeholder="Origin"
+        />
+        <div
+          *ngIf="
+            playerForm.get('origin')?.invalid &&
+            playerForm.get('origin')?.touched
+          "
+        >
+          <small *ngIf="playerForm.get('origin')?.errors?.['required']"
+            >Origin is required.</small
+          >
+        </div>
+      </div>
+
+      <div class="input_container">
+        <label class="input_label" for="role">Role:</label>
+        <input
+          type="text"
+          id="role"
+          formControlName="role"
+          class="input_field"
+          placeholder="Role"
+        />
+        <div
+          *ngIf="
+            playerForm.get('role')?.invalid && playerForm.get('role')?.touched
+          "
+        >
+          <small *ngIf="playerForm.get('role')?.errors?.['required']"
+            >Role is required.</small
+          >
+        </div>
+      </div>
+
+      <div class="input_container">
+        <label class="input_label" for="hero">Hero:</label>
+        <input
+          type="text"
+          id="hero"
+          formControlName="hero"
+          class="input_field"
+          placeholder="Hero"
+        />
+        <div
+          *ngIf="
+            playerForm.get('hero')?.invalid && playerForm.get('hero')?.touched
+          "
+        >
+          <small *ngIf="playerForm.get('hero')?.errors?.['required']"
+            >Hero is required.</small
+          >
+        </div>
+      </div>
+
+      <div class="input_container">
+        <label class="input_label" for="imageUrl">Image URL:</label>
+        <input
+          type="text"
+          id="imageUrl"
+          formControlName="imageUrl"
+          class="input_field"
+          placeholder="Image URL"
+        />
+        <div
+          *ngIf="
+            playerForm.get('imageUrl')?.invalid &&
+            playerForm.get('imageUrl')?.touched
+          "
+        >
+          <small *ngIf="playerForm.get('imageUrl')?.errors?.['required']"
+            >Image URL is required.</small
+          >
+        </div>
+      </div>
+
+      <div class="input_container">
+        <label class="input_label" for="flag">Flag:</label>
+        <select
+          id="flag"
+          formControlName="flag"
+          class="input_field"
+          placeholder="Flag"
+        >
+          <option value="assets/img/indo.png">Indonesia</option>
+          <option value="assets/img/ph.png">Philipines</option>
+        </select>
+        <div
+          *ngIf="
+            playerForm.get('flag')?.invalid && playerForm.get('flag')?.touched
+          "
+        >
+          <small *ngIf="playerForm.get('flag')?.errors?.['required']"
+            >Flag is required.</small
+          >
+        </div>
+      </div>
+      <div class="input_container">
+        <label class="input_label" for="email">Email:</label>
+        <textarea
+          id="Email"
+          formControlName="email"
+          class="input_field"
+          placeholder="Email"
+        ></textarea>
+        <div
+          *ngIf="
+            playerForm.get('email')?.invalid && playerForm.get('email')?.touched
+          "
+        >
+          <small *ngIf="playerForm.get('bio')?.errors?.['required']"
+            >Bio is required.</small
+          >
+        </div>
+      </div>
+
+      <div class="input_container">
+        <label class="input_label" for="bio">Bio:</label>
+        <textarea
+          id="bio"
+          formControlName="bio"
+          class="input_field"
+          placeholder="Bio"
+        ></textarea>
+        <div
+          *ngIf="
+            playerForm.get('bio')?.invalid && playerForm.get('bio')?.touched
+          "
+        >
+          <small *ngIf="playerForm.get('bio')?.errors?.['required']"
+            >Bio is required.</small
+          >
+        </div>
+      </div>
+    </div>
+
+    <div formArrayName="addresses" class="address-form">
+      <div
+        *ngFor="let addressGroup of addresses.controls; let i = index"
+        [formGroupName]="i"
+        class="address-card"
+      >
+        <!-- address -->
+        <div class="input_container_address">
+          <label class="input_label" for="address">Address:</label>
+          <input
+            type="text"
+            id="address"
+            formControlName="address"
+            class="input_field"
+            placeholder="Address"
+          />
+          <div
+            *ngIf="
+              addressGroup.get('address').invalid &&
+              addressGroup.get('address').touched
+            "
+          >
+            <small *ngIf="addressGroup.get('address').errors?.['required']"
+              >Address is required.</small
+            >
+          </div>
+        </div>
+        <!-- zipcode -->
+        <div class="input_container_address">
+          <label class="input_label" for="zipcode">Zip Code:</label>
+          <input
+            type="text"
+            id="zipcode"
+            formControlName="zipcode"
+            class="input_field"
+            placeholder="Zip Code"
+          />
+          <div
+            *ngIf="
+              addressGroup.get('zipcode').invalid &&
+              addressGroup.get('zipcode').touched
+            "
+          >
+            <small *ngIf="addressGroup.get('zipcode').errors?.['required']"
+              >Zip Code is required.</small
+            >
+          </div>
+        </div>
+        <!-- city -->
+        <div class="input_container_address">
+          <label class="input_label" for="city">City:</label>
+          <input
+            type="text"
+            id="city"
+            formControlName="city"
+            class="input_field"
+            placeholder="City"
+          />
+          <div
+            *ngIf="
+              addressGroup.get('city').invalid &&
+              addressGroup.get('city').touched
+            "
+          >
+            <small *ngIf="addressGroup.get('city').errors?.['required']"
+              >City is required.</small
+            >
+          </div>
+        </div>
+        <!-- country -->
+        <div class="input_container_address">
+          <label class="input_label" for="country">Country:</label>
+          <input
+            type="text"
+            id="country"
+            formControlName="country"
+            class="input_field"
+            placeholder="Country"
+          />
+          <div
+            *ngIf="
+              addressGroup.get('country').invalid &&
+              addressGroup.get('country').touched
+            "
+          >
+            <small *ngIf="addressGroup.get('country').errors?.['required']"
+              >Country is required.</small
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Tombol Hapus Alamat -->
+      <div class="button-container">
+        <!-- Tombol Tambah Alamat -->
+        <button type="button" class="add" (click)="addAddress()">
+          Tambah Alamat
+        </button>
+        <button
+          type="button"
+          class="remove"
+          (click)="removeAddress(addresses.length - 1)"
+        >
+          Remove Address
+        </button>
+      </div>
+      <button type="submit" class="sign-in_btn" (ngSubmit)="onSubmit()">
+        {{ isEdit ? "Update" : "Add" }}
+      </button>
+    </div>
+  </form>
+</div>
+<pre>{{ playerForm.value | json }}</pre>

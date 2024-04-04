@@ -1,0 +1,136 @@
+nav {
+  background-color: rgb(255, 213, 0);
+  width: 100%;
+  height: 70px;
+  color: #fff;
+  font-family: poppins;
+  justify-content: center;
+}
+.home {
+  position: absolute;
+  margin-left: 86%;
+  margin-top: 20px;
+}
+.home:hover {
+  border-bottom: solid #fff 2px;
+}
+.player {
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  color: black;
+}
+.player:hover {
+  border-bottom: solid #040404 2px;
+}
+.full-container {
+  font-family: poppins;
+  height: auto; /* Menjadikan ketinggian fleksibel */
+}
+
+.player-image-container {
+  background-image: url(https://images.squarespace-cdn.com/content/v1/61fe9abe199c974967b58aeb/1645112996046-JG973CUXHQ9OHLZTC9DU/Schermafbeelding+2022-02-17+om+15.02.01.png);
+  background-size: cover;
+  width: 100%;
+  height: 407px;
+  position: relative; /* Menjadikan posisi relatif untuk elemen yang berisi gambar */
+}
+
+.player-image {
+  position: absolute;
+  width: 320px;
+  height: 380px;
+  top: 27px; /* Menyesuaikan posisi gambar */
+  left: 50%; /* Menyentuh sisi kiri */
+  transform: translateX(-50%); /* Menggeser gambar ke tengah */
+  object-fit: cover;
+  z-index: 2;
+}
+
+.player-name {
+  position: absolute;
+  color: #fff;
+  font-size: 390px;
+  top: 100px;
+  left: 50%; /* Menyentuh sisi kiri */
+  transform: translateX(-50%); /* Menggeser teks ke tengah */
+  font-family: "Bebas Neue", sans-serif;
+  z-index: 1;
+}
+
+.edit-button,
+.delete-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #000000;
+  color: #ffc400;
+  border: solid 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+}
+
+.edit-button {
+  top: 15px;
+  right: 105px;
+}
+
+.delete-button {
+  top: 15px;
+  right: 15px;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  background-color: #ffd900;
+  color: #000000;
+  transform: scale(1.1);
+}
+.article-container {
+  display: flex;
+  flex-direction: row;
+}
+.left-article {
+  width: 65%;
+  height: 200px;
+  font-family: poppins;
+}
+.left-article-info {
+  margin-left: 50px;
+  margin-bottom: 40px;
+}
+.left-title {
+  font-weight: bold;
+  font-size: 50px;
+  color: #e2cf00;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+.right-article {
+  border: solid gray 1px;
+  width: 35%;
+  height: 600px;
+  color: #000000;
+  font-family: poppins;
+  font-size: 32px;
+}
+
+.right-article-info {
+  margin-left: 20px;
+  font-weight: 300;
+}
+.right-title {
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 50px;
+  color: #e2cf00;
+}
+.default-right {
+  font-size: 20px;
+  font-weight: 300;
+  color: #a3a3a3;
+}
+.addresses {
+  margin-left: 50px;
+}

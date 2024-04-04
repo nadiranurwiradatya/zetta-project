@@ -1,0 +1,65 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap"
+  rel="stylesheet"
+/>
+
+<div class="full-container" style="overflow: hidden">
+  <nav>
+    <img
+      class="logo"
+      src="assets/img/logo.png"
+      alt=""
+      srcset=""
+      style="
+        width: 60px;
+        height: 40px;
+        position: absolute;
+        top: 10px;
+        left: 100px;
+        z-index: 5;
+      "
+    />
+    <div class="welcome" style="position: absolute; z-index: 6">
+      ONIC ESPORT
+    </div>
+    <!-- <div class="status" style="position: absolute; z-index: 6">Our Player</div> -->
+  </nav>
+  <div class="banner"></div>
+  <div class="container-input">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      class="input"
+      placeholder="Find Player"
+    />
+  </div>
+  <div class="banner-layer"></div>
+  <div class="title" style="font-size: 32px; font-family: bebas">
+    All Roaster
+  </div>
+  <div class="menu-container">
+    <div
+      *ngFor="let player of filteredPlayer"
+      (click)="goToDetailPlayer(player)"
+      class="menu-card"
+    >
+      <img [src]="player.imageUrl" class="player-image" />
+      <img [src]="player.flag" class="player-country" />
+      <h2 class="player-name">{{ player.nickname }}</h2>
+      <p class="player-role">as {{ player.role }}</p>
+    </div>
+    <div class="flip-card" (click)="goToAddForm()">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <p class="title">Add New Roaster</p>
+        </div>
+        <div class="flip-card-back">
+          <img src="assets/img/add-player.png" class="add-player-image" />
+          <p>Leave Me</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

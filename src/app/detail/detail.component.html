@@ -1,0 +1,55 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap"
+  rel="stylesheet"
+/>
+<nav>
+  <div class="player" (click)="goToPlayer()">< Back To Player</div>
+</nav>
+<div class="form-core">
+  <div class="detail-container" *ngIf="player">
+    <div class="player-image-container">
+      <img [src]="player.imageUrl" class="player-image" />
+    </div>
+
+    <h2 class="player-name">{{ player.nickname }}</h2>
+
+    <div class="article-container">
+      <div class="left-article">
+        <div class="left-title">Bio</div>
+        <p class="left-article-info">{{ player.bio }}</p>
+        <!-- Informasi alamat pemain -->
+        <div
+          class="addresses"
+          *ngFor="let addresses of player.addresses; let i = index"
+        >
+          <hr />
+          <hr />
+          <h2>Alamat : {{ i + 1 }}</h2>
+          <p>{{ addresses.address }}</p>
+          <p>{{ addresses.country }}</p>
+          <p>{{ addresses.city }}</p>
+          <p>{{ addresses.zipcode }}</p>
+        </div>
+      </div>
+      <div class="right-article">
+        <div class="right-article-info">
+          <p class="right-title">Info</p>
+          <p class="default-right">Nama Asli :</p>
+          <p>{{ player.origin }}</p>
+          <p class="default-right">Role :</p>
+          <p>{{ player.role }}</p>
+          <p class="default-right">Signature Hero :</p>
+          <p>{{ player.hero }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button untuk menuju form edit -->
+    <button class="edit-button" (click)="goToEditForm(player.id)">Edit</button>
+    <button class="delete-button" (click)="deletePlayer(player.id)">
+      Delete
+    </button>
+  </div>
+</div>
