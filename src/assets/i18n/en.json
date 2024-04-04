@@ -1,0 +1,21 @@
+{
+  "ALL": "all",
+  "COMPANY": "company",
+  "MENTOR": "mentor",
+  "PENDING": "pending",
+  "ACTIVE": "active",
+  "NAME": "name",
+  "USERTYPE": "User Type",
+  "USER STATUS": "User Status",
+  "DOCUMENT COUNT": "Document Count",
+  "ACTION": "Action",
+  "CIVILITY   ": "civility",
+  "SEARCH TYPE ": "Search Type",
+  "SEARCH": "search",
+  "ADD MENTOR": "add mentor",
+  "SUBMIT": "Submit",
+  "HOME": "home",
+  "BACK": "back",
+  "EDIT": "edit",
+  "BIRTH DATE": "Birth Date"
+}

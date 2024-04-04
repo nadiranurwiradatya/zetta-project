@@ -1,0 +1,21 @@
+{
+  "ALL": "tout",
+  "COMPANY": "entreprise",
+  "MENTOR": "mentor",
+  "PENDING": "en attente",
+  "ACTIVE": "actif",
+  "NAME": "nom",
+  "USERTYPE": "Type d'utilisateur",
+  "USER STATUS": "Statut de l'utilisateur",
+  "DOCUMENT COUNT": "Nombre de documents",
+  "ACTION": "Action",
+  "CIVILITY   ": "civilité",
+  "SEARCH TYPE ": "Type de recherche",
+  "SEARCH": "recherche",
+  "ADD MENTOR": "ajouter un mentor",
+  "SUBMIT": "Soumettre",
+  "HOME": "maison",
+  "BACK": "Dos",
+  "EDiT": "modifier",
+  "BIRTH DATE": "Date de naissance"
+}

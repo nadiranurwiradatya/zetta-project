@@ -1,0 +1,65 @@
+<div
+  class="detail-container mat-elevation-z2"
+  style="background-color: #ffffff; border-radius: 20px"
+>
+  <div class="detail-left">
+    <div class="image-container">
+      <h1
+        style="font-weight: 600; text-align: center; color: black"
+        class="name"
+      >
+        {{ mentor.civility }} {{ mentor.first_name }} {{ mentor.last_name }}
+      </h1>
+      <img
+        style="
+          width: 350px;
+          height: 350px;
+          border-radius: 1000px;
+          background-size: cover;
+        "
+        src="https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg"
+        alt="Dummy Image"
+      />
+    </div>
+  </div>
+  <div
+    class="detail-right"
+    style="margin-top: 10vw; font-size: larger; width: 100vw"
+  >
+    <div class="detail-item"><strong>Email:</strong> {{ mentor.email }}</div>
+    <div class="detail-item">
+      <strong>Civility:</strong> {{ mentor.civility }}
+    </div>
+    <div class="detail-item"><strong>Gender:</strong> {{ mentor.gender }}</div>
+    <div class="detail-item">
+      <strong>User Status:</strong> {{ mentor.user_status | titlecase }}
+    </div>
+    <div class="detail-item">
+      <strong>Company:</strong> {{ mentor.company.name }}
+    </div>
+    <div class="detail-item">
+      <strong>Document Count:</strong> {{ mentor.count_document }}
+    </div>
+    <strong>BirthDate:</strong> {{ mentor.birthdate }}
+  </div>
+
+  <div style="flex: 3; margin-left: 15vw">
+    <div class="button-container">
+      <button
+        mat-raised-button
+        style="margin-right: 10px; background-color: #3b3c9a; color: white"
+        (click)="goBack()"
+      >
+        Back
+      </button>
+      <button
+        mat-raised-button
+        (click)="openEditDialog()"
+        style="background-color: #2e2f7c; color: white"
+        mat-raised-button
+      >
+        Edit
+      </button>
+    </div>
+  </div>
+</div>

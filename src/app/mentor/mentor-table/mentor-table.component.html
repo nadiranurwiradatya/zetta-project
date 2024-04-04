@@ -1,0 +1,196 @@
+<div
+  class="mat-elevation-z8"
+  style="
+    padding: 20px;
+    background-color: #2e2f7c;
+    color: white !important;
+    border-radius: 0px;
+  "
+>
+  <mat-form-field
+    style="padding-top: 1vw; padding-left: 1vw; padding-right: 0vw"
+  >
+    <mat-label>Civility</mat-label>
+    <mat-select [(ngModel)]="civilityValue" (ngModelChange)="filterMentors()">
+      <mat-option value="">All</mat-option>
+      <mat-option value="MR">MR</mat-option>
+      <mat-option value="MRS">MRS</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field
+    style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw"
+  >
+    <mat-label>Status</mat-label>
+    <mat-select [(ngModel)]="statusValue" (ngModelChange)="filterMentors()">
+      <mat-option value="">All</mat-option>
+      <mat-option value="active">Active</mat-option>
+      <mat-option value="pending">Pending</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field
+    style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw"
+  >
+    <mat-label>Search Type</mat-label>
+    <mat-select
+      [(ngModel)]="selectedSearchType"
+      (ngModelChange)="filterMentors()"
+    >
+      <mat-option value="name">Name</mat-option>
+      <mat-option value="id">ID</mat-option>
+      <mat-option value="email">Email</mat-option>
+      <mat-option value="company">Company</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Search</mat-label>
+    <input
+      matInput
+      [(ngModel)]="searchValue"
+      (ngModelChange)="filterMentors()"
+      placeholder="Search"
+    />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    (click)="openDialog()"
+    style="
+      margin-bottom: 20px;
+      margin-left: 15px;
+      padding-top: vw;
+      padding-left: 1vw;
+      padding-right: 1vw;
+      width: 17vw;
+      height: 55px;
+      border: solid #2e30a0;
+    "
+  >
+    Add Mentor +
+  </button>
+
+  <table
+    style="background-color: #2e2f7c"
+    mat-table
+    [dataSource]="dataSource"
+    matSort
+    (matSortChange)="sortData($event)"
+  >
+    <ng-container matColumnDef="_id">
+      <th mat-header-cell mat-sort-header="id" *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let mentor">{{ mentor._id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="name" colspan="2">
+        Name
+      </th>
+      <td
+        mat-cell
+        *matCellDef="let mentor"
+        colspan="2"
+        style="color: rgb(199, 199, 199)"
+      >
+        {{ mentor.civility }} {{ mentor.last_name }} {{ mentor.first_name }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th
+        mat-header-cell
+        style="color: white"
+        mat-sort-header="email"
+        *matHeaderCellDef
+      >
+        Email
+      </th>
+      <td mat-cell style="color: rgb(199, 199, 199)" *matCellDef="let mentor">
+        {{ mentor.email }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="company">
+      <th
+        mat-header-cell
+        mat-sort-header="company"
+        *matHeaderCellDef
+        colspan="2"
+      >
+        User Type
+      </th>
+      <td
+        mat-cell
+        *matCellDef="let mentor"
+        colspan="2"
+        style="color: rgb(199, 199, 199)"
+      >
+        {{ mentor.company.name }} - {{ mentor.company.user_type }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="user_status">
+      <th mat-header-cell mat-sort-header="user_status" *matHeaderCellDef>
+        User Status
+      </th>
+      <td mat-cell *matCellDef="let mentor" class="status-cell">
+        <mat-icon
+          *ngIf="mentor.user_status === 'active'"
+          style="color: rgb(26, 255, 0)"
+          class="status-icon"
+          >check_circle</mat-icon
+        >
+        <mat-icon
+          *ngIf="mentor.user_status === 'pending'"
+          color="warn"
+          class="status-icon"
+          >schedule</mat-icon
+        >
+        <span class="status-value">{{ mentor.user_status | uppercase }}</span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="count_document">
+      <th mat-header-cell mat-sort-header="count_document" *matHeaderCellDef>
+        Document Count
+      </th>
+      <td mat-cell style="text-align: center" *matCellDef="let mentor">
+        {{ mentor.count_document }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let mentor">
+        <button
+          mat-icon-button
+          style="color: rgb(187, 223, 255)"
+          (click)="goToDetailMentor(mentor._id)"
+        >
+          <mat-icon>visibility</mat-icon>
+        </button>
+        <button mat-icon-button color="red" (click)="deleteMentor(mentor._id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr
+      style="background-color: #3f40b0; color: white"
+      mat-header-row
+      *matHeaderRowDef="displayedColumns"
+    ></tr>
+    <tr
+      style="background-color: #313387; color: white"
+      mat-row
+      *matRowDef="let row; columns: displayedColumns"
+    ></tr>
+  </table>
+
+  <mat-paginator
+    style="background-color: #3f40b0; color: white"
+    [pageSizeOptions]="[5, 10, 16, 100]"
+    showFirstLastButtons
+    aria-label="Select page of periodic mentors"
+  >
+  </mat-paginator>
+</div>

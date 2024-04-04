@@ -1,0 +1,24 @@
+mat-dialog-content {
+  background-color: rgb(23, 44, 130);
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+.form-container {
+  padding: 10px;
+  font-family: poppins;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+mat-form-field {
+  width: 300px;
+}
+::ng-deep .mdc-form-field {
+  color: #fff !important;
+}
+::ng-deep .mat-mdc-radio-button.mat-accent {
+  --mdc-radio-unselected-icon-color: white;
+}
