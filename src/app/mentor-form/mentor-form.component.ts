@@ -37,7 +37,7 @@ export class MentorFormComponent implements OnInit {
   createForm(): void {
     this.mentorForm = this.fb.group({
       _id: [''],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       civility: ['', Validators.required], // Pastikan ini menggunakan Validators.required agar tidak ada pilihan kosong
       first_name: ['', Validators.required],
       last_name: ['', Validators.required],
@@ -68,14 +68,13 @@ export class MentorFormComponent implements OnInit {
     }
 
     if (!this.id) {
-      // formData._id = '100';
       successMessage = 'Successfully added new data!';
       confirmButtonText = 'Yes, add it!';
-      this.mentorService.addNewMentor(formData);
+      // this.mentorService.addNewMentor(formData);
     } else {
       successMessage = 'Your data has been edited!';
       confirmButtonText = 'Yes, edit it!';
-      this.mentorService.updateMentor(formData);
+      // this.mentorService.updateMentor(formData);
     }
 
     Swal.fire({
@@ -87,6 +86,11 @@ export class MentorFormComponent implements OnInit {
       cancelButtonText: 'No, keep it',
     }).then((result) => {
       if (result.isConfirmed) {
+        if (!this.id) {
+          this.mentorService.addNewMentor(formData);
+        } else {
+          this.mentorService.updateMentor(formData);
+        }
         this.router.navigate(['/home']);
         this.dialogRef.close();
         Swal.fire('Submitted!', successMessage, 'success');

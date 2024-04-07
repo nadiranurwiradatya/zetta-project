@@ -13,7 +13,11 @@
         <mat-error *ngIf="mentorForm.get('email').hasError('required')"
           >Email is required</mat-error
         >
+        <mat-error *ngIf="mentorForm.get('email').hasError('email')"
+          >Email Format is Wrong</mat-error
+        >
       </mat-form-field>
+
       <mat-radio-group
         formControlName="civility"
         style="margin-bottom: 10px; color: rgb(250, 250, 250)"

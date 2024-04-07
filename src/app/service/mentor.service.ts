@@ -48,10 +48,20 @@ export class MentorService {
 
   addNewMentor(newMentor: MentorType) {
     const currentMentors = [...this.mentor.value];
-    const lastMentor = currentMentors[currentMentors.length - 1];
-    const newId = (parseInt(lastMentor._id) + 1).toString();
-    newMentor._id = newId;
-    currentMentors.unshift(newMentor); //agar newMentor berada paing atas
+    let highestId = 0;
+    // Mencari ID tertinggi yang sudah ada di dalam daftar mentor
+    currentMentors.forEach((mentor) => {
+      const mentorId = parseInt(mentor._id);
+      if (mentorId > highestId) {
+        //jika mentorId lebih besar dari Id Tertinggi mak
+        highestId = mentorId;
+        console.log(highestId);
+      }
+    });
+    // Menambahkan 1 ke ID tertinggi untuk mendapatkan ID baru
+    const newId = highestId + 1;
+    newMentor._id = newId.toString();
+    currentMentors.unshift(newMentor); // Agar newMentor berada di atas
     this.mentor.next(currentMentors);
   }
 

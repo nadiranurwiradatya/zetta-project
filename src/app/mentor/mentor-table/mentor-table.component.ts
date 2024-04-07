@@ -17,8 +17,6 @@ import { MentorFormComponent } from '../../mentor-form/mentor-form.component';
 export class MentorTableComponent implements OnInit, AfterViewInit {
   mentorList: MentorType[] = [];
   dataSource = new MatTableDataSource<MentorType>();
-  sortedData: MentorType[] = [];
-  copiedData: any;
 
   //set value search
   searchValue: string = '';
@@ -47,9 +45,9 @@ export class MentorTableComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.mentorService.mentor$.subscribe((mentors) => {
       this.mentorList = mentors;
-      this.sortedData = mentors.slice();
-      this.copiedData = mentors.slice();
-      this.dataSource.data = this.sortedData;
+      // this.sortedData = mentors.slice();
+      // this.copiedData = mentors.slice();
+      this.dataSource.data = this.mentorList;
     });
   }
 
@@ -89,47 +87,47 @@ export class MentorTableComponent implements OnInit, AfterViewInit {
     this.dialog.open(MentorFormComponent);
   }
   //
-  sortData(sort: Sort) {
-    const data = this.sortedData.slice();
+  // sortData(sort: Sort) {
+  //   const data = this.sortedData.slice();
 
-    if (!sort.active || sort.direction === '') {
-      console.log('tidak ada');
-      this.sortedData = this.copiedData.slice(); // Menggunakan data yang telah disalin
-      this.dataSource.data = this.sortedData; // Mengatur ulang data source
-      return;
-    }
+  //   if (!sort.active || sort.direction === '') {
+  //     console.log('tidak ada');
+  //     this.sortedData = this.copiedData.slice(); // Menggunakan data yang telah disalin
+  //     this.dataSource.data = this.sortedData; // Mengatur ulang data source
+  //     return;
+  //   }
 
-    //proses sorting , sort active  = string ; sort direction = asc, dsc ;
-    this.sortedData = data.sort((a, b) => {
-      const isAsc = sort.direction === 'asc';
-      switch (sort.active) {
-        //membuat logic tiap case untuk mengurutkan case masing masing header
-        case 'id':
-          return this.compareNumber(parseInt(a._id), parseInt(b._id), isAsc);
-        case 'email':
-        case 'user_status':
-          return this.compareString(a[sort.active], b[sort.active], isAsc);
-        case 'name':
-          return this.compareString(a.last_name, b.last_name, isAsc);
-        case 'company':
-          return this.compareString(a.company.name, b.company.name, isAsc);
-        case 'count_document':
-          return this.compareNumber(a[sort.active], b[sort.active], isAsc);
-        default:
-          return 0;
-      }
-    });
-    this.dataSource.data = this.sortedData;
-  }
+  //   //proses sorting , sort active  = string ; sort direction = asc, dsc ;
+  //   this.sortedData = data.sort((a, b) => {
+  //     const isAsc = sort.direction === 'asc';
+  //     switch (sort.active) {
+  //       //membuat logic tiap case untuk mengurutkan case masing masing header
+  //       case 'id':
+  //         return this.compareNumber(parseInt(a._id), parseInt(b._id), isAsc);
+  //       case 'email':
+  //       case 'user_status':
+  //         return this.compareString(a[sort.active], b[sort.active], isAsc);
+  //       case 'name':
+  //         return this.compareString(a.last_name, b.last_name, isAsc);
+  //       case 'company':
+  //         return this.compareString(a.company.name, b.company.name, isAsc);
+  //       case 'count_document':
+  //         return this.compareNumber(a[sort.active], b[sort.active], isAsc);
+  //       default:
+  //         return 0;
+  //     }
+  //   });
+  //   this.dataSource.data = this.sortedData;
+  // }
 
-  compareString(a: string, b: string, isAsc: boolean) {
-    return (a.toLowerCase() < b.toLowerCase() ? -1 : 1) * (isAsc ? 1 : -1);
-  }
+  // compareString(a: string, b: string, isAsc: boolean) {
+  //   return (a.toLowerCase() < b.toLowerCase() ? -1 : 1) * (isAsc ? 1 : -1);
+  // }
 
   //
-  compareNumber(a: number, b: number, isAsc: boolean) {
-    return (a - b) * (isAsc ? 1 : -1);
-  }
+  // compareNumber(a: number, b: number, isAsc: boolean) {
+  //   return (a - b) * (isAsc ? 1 : -1);
+  // }
 
   goToDetailMentor(id: string) {
     this.router.navigate(['detail', id]);
