@@ -1,0 +1,5 @@
+<!-- task.component.html -->
+<div class="task-container">
+  <app-task-form (taskAdded)="addTask($event)"></app-task-form>
+  <app-task-list [receiveTasks]="tasks"></app-task-list>
+</div>

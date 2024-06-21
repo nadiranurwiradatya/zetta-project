@@ -1,0 +1,20 @@
+<!-- task-list.component.html -->
+<div class="container">
+  <ul class="task-list">
+    <li *ngFor="let task of receiveTasks" class="task-item">
+      <button (click)="showDetail(task)" class="button detail-button">
+        See Detail
+      </button>
+      <span>{{ task.task }}</span>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedTask" class="detail">
+  <div class="info">
+    <h2>Detail Task</h2>
+    <p><strong>Task:</strong> {{ selectedTask.task }}</p>
+    <p><strong>Description:</strong> {{ selectedTask.description }}</p>
+    <button class="button button--close" (click)="closeDetail()">Close</button>
+  </div>
+</div>

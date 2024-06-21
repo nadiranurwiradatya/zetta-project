@@ -1,0 +1,76 @@
+/* task-list.component.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+  background-color: #fff;
+  border: solid orange 1.5px;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box; /* Menambahkan box-sizing */
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0.5rem 1rem;
+  border: solid 2px;
+  border-radius: 50px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.task-item:hover {
+  background-color: #f0f0f0;
+}
+
+.detail-button {
+  font: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #007dab;
+}
+
+.detail {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: solid orange 2px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.info {
+  margin-left: 20px;
+}
+
+.button {
+  font: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.button--close {
+  background-color: #007dab;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.button--close:hover {
+  background-color: #006489;
+}
