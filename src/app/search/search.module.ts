@@ -5,16 +5,12 @@ import { ArticleModule } from '../article/article.module'; // Import ArticleModu
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    FieldComponent,
-  ],
+  declarations: [FieldComponent],
   imports: [
     CommonModule,
     ArticleModule, // Include ArticleModule if needed
-    FormsModule 
+    FormsModule,
   ],
-  exports : [
-    FieldComponent
-  ]
+  exports: [FieldComponent],
 })
-export class SearchModule { }
+export class SearchModule {}

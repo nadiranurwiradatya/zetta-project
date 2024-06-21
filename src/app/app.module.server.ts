@@ -6,9 +6,7 @@ import { AppComponent } from './app.component';
 import { FieldComponent } from './search/field/field.component';
 
 @NgModule({
-  imports: [
-    ServerModule,
-  ],
+  imports: [ServerModule],
   bootstrap: [AppComponent],
 })
 export class AppServerModule {}
