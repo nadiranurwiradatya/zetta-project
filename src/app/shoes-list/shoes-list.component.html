@@ -1,0 +1,57 @@
+<nav>
+  <img
+    src="https://i.pinimg.com/originals/20/60/2d/20602d43cc993811e5a6bd1886af4f33.png"
+    alt="Logo"
+    class="logo"
+    style="width: 50px; height: 20px; margin-left: 20px"
+  />
+  <!-- Tambahkan elemen lain di sini -->
+</nav>
+
+<header>
+  <h1>
+    Just <br />
+    Do <br />
+    It
+  </h1>
+  <p>
+    Selamat datang di Nike, destinasi utama bagi para pencinta olahraga dan gaya
+    hidup aktif di seluruh dunia. Di sini,<br />
+    kami tidak hanya menjual produk olahraga berkualitas tinggi, tetapi juga
+    menjadi pusat inspirasi bagi para pelanggan kami.
+  </p>
+  <div class="gambar"></div>
+</header>
+
+<div class="background">
+  <div class="shoes-container">
+    <div class="shoes-tittle">Shoes List</div>
+    <!-- Existing shoes list -->
+    <div class="card-container">
+      <div
+        class="card"
+        *ngFor="let shoes of shoesList"
+        (click)="selectShoe(shoes)"
+      >
+        <img
+          [src]="shoes.imageUrl"
+          alt="Shoe Image"
+          style="
+            width: 200px;
+            height: 240px;
+            overflow: hidden;
+            background-size: cover;
+            border-radius: 10px;
+            margin-left: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          "
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ shoes.brand }}</h5>
+          <h5 class="card-title">{{ shoes.model }}</h5>
+          <p class="card-text">${{ shoes.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

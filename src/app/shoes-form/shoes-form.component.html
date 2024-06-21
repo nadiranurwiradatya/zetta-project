@@ -1,0 +1,86 @@
+<div class="form-container">
+  <form (ngSubmit)="addNewShoes()" class="form">
+    <div class="text-tittle">add new shoes</div>
+    <div class="form-group">
+      <input
+        placeholder="Enter brand"
+        class="input"
+        type="text"
+        id="brand"
+        name="brand"
+        [(ngModel)]="newShoesForm.brand"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <input
+        placeholder="Enter model"
+        class="input"
+        type="text"
+        id="model"
+        name="model"
+        [(ngModel)]="newShoesForm.model"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <input
+        placeholder="Enter size"
+        class="input"
+        type="number"
+        id="size"
+        name="size"
+        [(ngModel)]="newShoesForm.size"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <input
+        placeholder="Enter price"
+        class="input"
+        type="number"
+        id="price"
+        name="price"
+        [(ngModel)]="newShoesForm.price"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <input
+        placeholder="Enter image URL"
+        class="input"
+        type="text"
+        id="imageUrl"
+        name="imageUrl"
+        [(ngModel)]="newShoesForm.imageUrl"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <input
+        placeholder="Enter Description"
+        class="input"
+        type="text"
+        id="description"
+        name="description"
+        [(ngModel)]="newShoesForm.description"
+        required
+      />
+    </div>
+    <div class="image-preview">
+      <div class="text-preview" style="font-family: poppins">Preview</div>
+      <img
+        [src]="newShoesForm.imageUrl"
+        alt="Image Preview"
+        *ngIf="newShoesForm.imageUrl"
+        style="
+          width: 170px;
+          height: 210px;
+          border-radius: 10px;
+          margin-left: 50px;
+        "
+      />
+    </div>
+    <button type="submit">Add New Shoe</button>
+  </form>
+</div>

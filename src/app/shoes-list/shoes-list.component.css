@@ -1,0 +1,372 @@
+nav {
+  width: 100%;
+  height: 80px;
+  background-color: #b4b4b8;
+  display: flex;
+  align-items: center;
+}
+
+header {
+  background-color: rgb(255, 255, 255);
+  color: rgb(30, 30, 30);
+  position: relative;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.background {
+  background-color: #dbdbdb;
+  margin-top: 100px;
+  height: 800px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header > h1 {
+  font-family: poppins;
+  font-size: 53px;
+  font-weight: bold;
+}
+
+header > p {
+  font-size: 14px;
+}
+
+.gambar {
+  position: absolute;
+  left: 800px;
+  top: 20px;
+  background-size: cover;
+  width: 400px;
+  height: 380px;
+  background-image: url("https://i.pinimg.com/736x/5b/85/55/5b8555bd67cadac6318f1076cd018795.jpg");
+}
+
+@media (max-width: 768px) {
+  .gambar {
+    display: none; /* Sembunyikan gambar saat lebar layar lebih kecil dari 768px */
+  }
+}
+
+.shoes-tittle {
+  font-size: 32px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-family: poppins;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.shoes-container {
+  position: relative;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: repeat(
+    auto-fill,
+    minmax(1fr, auto)
+  ); /* Mengatur baris otomatis */
+  gap: 30px; /* Jarak antara card */
+}
+
+.card {
+  width: 230px;
+  height: 300px;
+  margin-bottom: 10px;
+  transition: ease-in 0.1s;
+  border-radius: 20px;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+.card-body {
+  margin-left: 20px;
+}
+
+.card-text {
+  margin: 0px;
+  font-family: poppins;
+  font-size: small;
+  color: black;
+}
+.card-title {
+  margin: 0px;
+  font-weight: 700px;
+  font-family: poppins;
+  color: Black;
+}
+
+.form-container {
+  margin-top: 10%;
+  /* Menggunakan unit relatif */
+}
+.text-tittle {
+  font-family: poppins;
+  color: #fff;
+  font-size: 32px;
+}
+
+.form {
+  border-radius: 10px;
+  width: 80%; /* Menggunakan unit relatif */
+  max-width: 500px; /* Menetapkan lebar maksimum */
+  margin: auto; /* Memusatkan form */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5%;
+  background: rgb(66, 66, 66);
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  animation: form-animation 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .form {
+    width: 90%;
+    max-width: 90%; /* Menggunakan unit relatif */
+  }
+}
+
+@keyframes form-animation {
+  from {
+    transform: rotateX(-30deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.input {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  color: rgb(255, 255, 255);
+  border: 2px solid #8f8f8f;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.input::placeholder {
+  color: #fff;
+}
+
+.input:hover,
+.input:focus {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05) rotateY(20deg);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+button:hover {
+  background-color: #ffffff;
+  color: black;
+  font-size: 17px;
+  transform: scale(1.05) rotateY(20deg) rotateX(10deg);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.image-preview {
+  position: absolute;
+  width: 40%; /* Menggunakan unit relatif */
+  max-width: 80px; /* Menetapkan lebar maksimum */
+  height: auto; /* Menggunakan unit relatif */
+  margin-left: 20px;
+  margin-top: 10px; /* Menggunakan unit relatif */
+  font-family: poppins;
+}
+.image-preview {
+  color: white;
+  font-family: popins;
+  margin-top: 50px;
+  margin-left: 200px;
+}
+.text-preview {
+  color: white;
+  font-family: popins;
+  margin-left: 50px;
+}
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --dark-color-lighten: #f2f5ff;
+  --red-card: #a62121;
+  --blue-card: #4bb7e6;
+  --btn: #141414;
+  --btn-hover: #3a3a3a;
+  --text: #fbf7f7;
+}
+
+/*===== RESET =====*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--dark-color-lighten);
+  font-family: "Montserrat", sans-serif;
+}
+button {
+  font-family: "Montserrat", sans-serif;
+  display: inline-block;
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+/*===== CARD =====*/
+.container {
+  height: 100%;
+  width: 850px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.card {
+  position: relative;
+
+  box-shadow: -1px 15px 30px -12px rgb(32, 32, 32);
+  border-radius: 0.9rem;
+  background-color: var(--red-card);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.card-blue {
+  background: var(--blue-card);
+}
+
+.product-image {
+  height: 230px;
+  width: 100%;
+  transform: translate(0, -1.5rem);
+  transition: transform 500ms ease-in-out;
+  filter: drop-shadow(5px 10px 15px rgba(8, 9, 13, 0.4));
+}
+.product-info {
+  text-align: center;
+}
+
+.card:hover .product-image {
+  transform: translate(-1.5rem, -7rem) rotate(-20deg);
+}
+
+.product-info h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.product-info p {
+  margin: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.price {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+.buy-btn {
+  background-color: var(--btn);
+  padding: 0.6rem 3.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 300ms ease;
+}
+.buy-btn:hover {
+  background-color: var(--btn-hover);
+}
+.fav {
+  box-sizing: border-box;
+  background: #fff;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid#000;
+  display: grid;
+  place-items: center;
+}
+
+.svg {
+  height: 25px;
+  width: 25px;
+  fill: #fff;
+  transition: all 500ms ease;
+}
+
+.fav:hover .svg {
+  fill: #000;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    height: auto;
+  }
+  .container {
+    padding: 2rem 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}

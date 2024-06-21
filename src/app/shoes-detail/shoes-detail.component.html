@@ -1,0 +1,30 @@
+<div *ngIf="selectShoes">
+  <div class="detail-card">
+    <div class="button-container">
+      <button class="close-button" (click)="closeDetail()">Close</button>
+      <button class="edit-button" (click)="openEditShoesModal()">Edit</button>
+      <button class="delete-button" (click)="deleteShoes()">Delete</button>
+    </div>
+    <div class="card-info">
+      <h2>Detail Sepatu</h2>
+      <p><strong>Brand:</strong> {{ selectShoes.brand }}</p>
+      <p><strong>Model:</strong> {{ selectShoes.model }}</p>
+      <p><strong>Ukuran Tersedia:</strong> {{ selectShoes.size }}</p>
+      <p><strong>Harga:</strong> ${{ selectShoes.price }}</p>
+      <p><strong>Deskripsi:</strong> {{ selectShoes.description }}</p>
+    </div>
+    <img
+      [src]="selectShoes.imageUrl"
+      alt="{{ selectShoes.brand }} {{ selectShoes.model }}"
+      class="image-detail"
+      style="width: 260px; height: 300px"
+    />
+  </div>
+
+  <!-- Tampilkan EditShoesComponent jika showEditModal bernilai true -->
+  <app-edit-shoes
+    *ngIf="showEditModal"
+    [editedShoes]="selectShoes"
+    (saveChangesEvent)="saveChanges($event)"
+  ></app-edit-shoes>
+</div>

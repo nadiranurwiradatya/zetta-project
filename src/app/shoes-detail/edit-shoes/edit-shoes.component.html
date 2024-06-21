@@ -1,0 +1,64 @@
+<div class="container">
+  <h2>Edit Sepatu</h2>
+
+  <div class="form-group">
+    <label for="brand">Brand:</label>
+    <input
+      type="text"
+      id="brand"
+      class="form-control"
+      [(ngModel)]="editedShoes.brand"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="model">Model:</label>
+    <input
+      type="text"
+      id="model"
+      class="form-control"
+      [(ngModel)]="editedShoes.model"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="size">Size:</label>
+    <input
+      type="number"
+      id="size"
+      class="form-control"
+      [(ngModel)]="editedShoes.size"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="price">Price:</label>
+    <input
+      type="number"
+      id="price"
+      class="form-control"
+      [(ngModel)]="editedShoes.price"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea
+      id="description"
+      class="form-control"
+      [(ngModel)]="editedShoes.description"
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="imageUrl">Image URL:</label>
+    <input
+      type="text"
+      id="imageUrl"
+      class="form-control"
+      [(ngModel)]="editedShoes.imageUrl"
+    />
+  </div>
+
+  <button class="btn btn-primary" (click)="saveChanges()">Save Changes</button>
+</div>
