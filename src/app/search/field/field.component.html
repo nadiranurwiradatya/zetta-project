@@ -1,0 +1,53 @@
+<div class="full_container">
+  <div class="top-body-container">
+    <div class="detail" *ngIf="selectedCard">
+      <div class="info">
+        <button (click)="hideDetail()" class="hide-button">Hide Detail</button>
+        <img
+          [src]="selectedCard.img"
+          alt="Card Image"
+          style="width: 200px; height: 130px; float: left; margin-right: 10px"
+        />
+        <p class="text-detail">
+          Name : {{ selectedCard.name }}<br />
+          Role : {{ selectedCard.role }}<br />
+          Age : {{ selectedCard.age }}<br />
+          Address : {{ selectedCard.city }}
+        </p>
+      </div>
+    </div>
+
+    <div class="top-layer"><div class="logo">Nadira</div></div>
+  </div>
+
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    class="input"
+    placeholder="Search Employee"
+  />
+
+  <article class="article">
+    <div *ngFor="let card of filteredCards" class="card">
+      <div class="card-img"></div>
+      <div class="card-info">
+        <p class="text-title">Name : {{ card.name }}</p>
+        <p class="text-body">Role : {{ card.role }}</p>
+        <p class="text-info">Age : {{ card.age }}</p>
+        <p>Address : {{ card.city }}</p>
+      </div>
+      <div>
+        <button (click)="pemanggilButton(card)" class="button">
+          Cek Profile
+          <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+            <path
+              clip-rule="evenodd"
+              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </article>
+</div>
