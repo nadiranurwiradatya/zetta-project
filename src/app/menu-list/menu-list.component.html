@@ -1,0 +1,24 @@
+<div class="full-container">
+  <header>
+    <div class="header-text">KFC Jagonya Ayam.</div>
+    <img
+      src="https://i.pinimg.com/originals/c9/b4/f1/c9b4f16ba40c5c65943477f5cbaae45e.png"
+      alt=""
+      srcset=""
+      style="height: 340px; width: 340px"
+      class="header-image"
+    />
+  </header>
+  <h1 class="list-title">List Menu</h1>
+  <div class="menu-container">
+    <div
+      *ngFor="let item of list"
+      (click)="showMenuDetail(item)"
+      class="menu-card"
+    >
+      <img [src]="item.imageUrl" alt="{{ item.name }}" class="menu-image" />
+      <h2 class="menu-title">{{ item.name }}</h2>
+      <p class="menu-price">Rp.{{ item.price }}</p>
+    </div>
+  </div>
+</div>

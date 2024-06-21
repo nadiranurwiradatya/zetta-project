@@ -1,0 +1,18 @@
+<!-- detail.component.html -->
+<div *ngIf="selectedMenu" class="detail-container">
+  <div class="detail-card">
+    <button class="button" (click)="closeDetail()">Close</button>
+    <div class="card-info">
+      <h2>Detail Menu</h2>
+      <h2>{{ selectedMenu.name }}</h2>
+      <img
+        [src]="selectedMenu.imageUrl"
+        alt="Menu Image"
+        class="image-detail"
+      />
+      <p>{{ selectedMenu.description }}</p>
+      <p>Price: {{ selectedMenu.price }}</p>
+      <p>Spicy: {{ selectedMenu.spicy ? "Yes" : "No" }}</p>
+    </div>
+  </div>
+</div>

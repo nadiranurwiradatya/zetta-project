@@ -1,0 +1,55 @@
+<form class="form" (ngSubmit)="addNewMenu()">
+  Tambah Menu Baru
+  <div>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      [(ngModel)]="newMenuForm.name"
+      class="input"
+      placeholder="Name of Menu"
+    />
+  </div>
+  <div>
+    <input
+      id="description"
+      name="description"
+      required
+      [(ngModel)]="newMenuForm.description"
+      class="input"
+      placeholder="Description"
+    />
+  </div>
+  <div>
+    <input
+      type="number"
+      id="price"
+      name="price"
+      required
+      [(ngModel)]="newMenuForm.price"
+      placeholder="Price"
+    />
+  </div>
+  <div>
+    <label for="spicy">Spicy :</label>
+    <input
+      type="checkbox"
+      id="spicy"
+      name="spicy"
+      [(ngModel)]="newMenuForm.spicy"
+      class="input"
+    />
+  </div>
+  <div>
+    <input
+      type="text"
+      id="image Url"
+      name="image Url"
+      required
+      [(ngModel)]="newMenuForm.imageUrl"
+      placeholder="image Url"
+    />
+  </div>
+  <button type="submit">Submit</button>
+</form>
