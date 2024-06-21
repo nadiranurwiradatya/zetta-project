@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { MentorService } from '../service/mentor.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-mentor-form',
@@ -20,6 +21,7 @@ export class MentorFormComponent implements OnInit {
     private mentorService: MentorService,
     private router: Router,
     private route: ActivatedRoute,
+    private translate: TranslateService,
     private dialogRef: MatDialogRef<MentorFormComponent>
   ) {}
 
@@ -30,7 +32,7 @@ export class MentorFormComponent implements OnInit {
       // Jika ada, ini adalah mode edit
       this.id = this.data.mentor._id;
       console.log(this.data === this.data.mentor._id); // Mengambil id dari data mentor yang diterima
-      this.mentorForm.patchValue(this.data.mentor); // Mengisi form dengan data mentor
+      this.mentorForm.patchValue(this.data.mentor); // Mengisi mentorForm dengan data.mentor (otomatis berdasar nama)
     }
   }
 
@@ -99,4 +101,12 @@ export class MentorFormComponent implements OnInit {
       }
     });
   }
+  // switchLang(event: Event) {
+  //   const target = event.target as HTMLSelectElement;
+  //   if (target) {
+  //     const lang = target.value;
+  //     this.translate.use(lang);
+  //     console.log(lang);
+  //   }
+  // }
 }

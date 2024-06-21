@@ -10,10 +10,16 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatNavList } from '@angular/material/list';
 import { MatIcon } from '@angular/material/icon';
-import { HttpClientModule } from '@angular/common/http';
 import { MentorFormModule } from './mentor-form/mentor-form.module';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepicker } from '@angular/material/datepicker';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,8 +33,22 @@ import { MatDatepicker } from '@angular/material/datepicker';
     MatNavList,
     MatIcon,
     HttpClientModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'fr',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
-  providers: [provideClientHydration(), provideAnimationsAsync()],
+  exports: [],
+  providers: [
+    provideClientHydration(),
+    provideAnimationsAsync(),
+    HttpClient,
+    HttpClientModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

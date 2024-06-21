@@ -4,15 +4,15 @@
       {{ id ? "EDIT FORM" : "ADD FORM" }}
     </h1>
   </div>
-
+  <p></p>
   <form [formGroup]="mentorForm" (ngSubmit)="onSubmit()">
     <div class="form-container">
       <mat-form-field>
         <mat-label>Email</mat-label>
         <input matInput formControlName="email" placeholder="Email" />
-        <mat-error *ngIf="mentorForm.get('email').hasError('required')"
-          >Email is required</mat-error
-        >
+        <mat-error *ngIf="mentorForm.get('email').hasError('required')">{{
+          "Email is required" | translate
+        }}</mat-error>
         <mat-error *ngIf="mentorForm.get('email').hasError('email')"
           >Email Format is Wrong</mat-error
         >
