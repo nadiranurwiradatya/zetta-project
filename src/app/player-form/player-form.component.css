@@ -1,0 +1,149 @@
+nav {
+  background-color: #12273c;
+  width: 100%;
+  height: 70px;
+  color: #fff;
+  font-family: poppins;
+  justify-content: center;
+}
+.home {
+  position: absolute;
+  margin-left: 86%;
+  margin-top: 20px;
+}
+.home:hover {
+  border-bottom: solid #fff 2px;
+}
+.player {
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 20px;
+}
+.player:hover {
+  border-bottom: solid #fff 2px;
+}
+
+.form-core {
+  display: flex;
+  justify-content: center;
+  background-color: #e5e5e5;
+  background-size: cover;
+  overflow: hidden;
+  height: 540px;
+}
+.form-desc {
+  position: absolute;
+  left: 370px;
+  color: white;
+  font-size: 32px;
+  z-index: 1;
+}
+.form-image {
+  overflow: hidden;
+  position: absolute;
+  left: 300px;
+  top: 110px;
+  width: 700px; /* Mengatur lebar form */
+  height: 470px;
+  z-index: 2;
+}
+
+.form_container {
+  overflow: hidden;
+  margin-top: 20px;
+  width: 300px; /* Mengatur lebar form */
+  height: 430px; /* Mengatur tinggi maksimum form */
+  display: wrap;
+
+  flex-direction: wrap;
+  align-items: center;
+  background-color: #12273c;
+  gap: 15px;
+  padding: 30px 40px 30px 400px;
+  box-shadow: 0px 10px 20px 42px rgba(0, 0, 0, 0.01),
+    0px 59px 36px rgba(0, 0, 0, 0.05), 0px 26px 26px rgba(0, 0, 0, 0.09),
+    0px 7px 15px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 11px;
+  font-family: poppins;
+}
+
+.logo_container {
+  width: 60px; /* Mengurangi lebar logo container */
+  height: 60px; /* Mengurangi tinggi logo container */
+}
+
+.title_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem; /* Mengurangi ukuran font title */
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.input_container {
+  width: 100%; /* Mengisi lebar form */
+  position: relative;
+  display: flex;
+  flex-direction: row; /* Mengatur agar input label dan input field berada dalam satu baris */
+  align-items: flex-start; /* Mengatur agar input label berada di sebelah kiri input field */
+  gap: 5px;
+  margin-top: 10px;
+  z-index: 5;
+}
+
+.input_label {
+  font-size: 0.75rem;
+  color: #ffffff;
+  font-weight: 600;
+  flex-basis: 30%; /* Mengatur lebar input label */
+}
+
+.input_field {
+  flex-grow: 5; /* Mengisi sisa ruang yang tersedia */
+  height: 35px; /* Mengurangi tinggi input field */
+  padding: 0 0 0 10px; /* Mengurangi padding input field */
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid #e5e5e5;
+  filter: drop-shadow(0px 1px 0px #efefef)
+    drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+.player-bio {
+  flex-grow: 5; /* Mengisi sisa ruang yang tersedia */
+  height: 100px; /* Mengurangi tinggi input field */
+  padding: 0 0 0 10px; /* Mengurangi padding input field */
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid #e5e5e5;
+  filter: drop-shadow(0px 1px 0px #efefef)
+    drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+  word-wrap: break-word;
+}
+
+.input_field:focus {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 2px #ffffff;
+  background-color: #75c5f0;
+}
+
+.sign-in_btn {
+  margin-left: 95px;
+  width: 200px;
+  height: 30px;
+  border: 0;
+  background: #75c5f0;
+  border-radius: 7px;
+  outline: none;
+  color: #000000;
+  cursor: pointer;
+  position: relative; /* Menambahkan posisi relatif */
+  z-index: 4; /* Menambahkan z-index */
+}

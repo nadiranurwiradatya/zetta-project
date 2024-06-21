@@ -1,0 +1,38 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap"
+  rel="stylesheet"
+/>
+
+<nav>
+  <img
+    class="logo"
+    src="assets/img/logo.png"
+    alt=""
+    srcset=""
+    style="width: 40px; height: 40px; position: absolute; top: 15px; left: 10px"
+  />
+  <div (click)="goHome()" class="home">Home</div>
+  <div (click)="goToPlayer()" class="player">Player</div>
+</nav>
+<div class="full-container">
+  <div class="menu-container">
+    <div
+      *ngFor="let player of playerList"
+      (click)="goToDetailPlayer(player)"
+      class="menu-card"
+    >
+      <img [src]="player.imageUrl" class="player-image" />
+      <h2 class="player-name">{{ player.nickname }}</h2>
+      <p class="player-role">{{ player.role }}</p>
+      <div class="origin">
+        <p>{{ player.origin }}</p>
+      </div>
+    </div>
+    <div class="tambah-player" (click)="goToAddForm()">
+      <img src="assets/img/add-player.png" class="add-player-image" />
+      <div class="add-player-text"><p>Tambah Player Baru</p></div>
+    </div>
+  </div>
+</div>

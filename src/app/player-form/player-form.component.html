@@ -1,0 +1,95 @@
+<nav>
+  <div class="player" (click)="goToPlayer()">< Back To Player</div>
+</nav>
+<div class="form-core">
+  <div class="form-image">
+    <img
+      src="assets/img/evos_zeys.png"
+      alt=""
+      srcset=""
+      style="width: 500px; height: 500px"
+    />
+  </div>
+  <div class="form_container">
+    <p class="form-desc">{{ isNewPlayer ? "Add Player" : "Edit Player" }}</p>
+    <div class="title_container">
+      <h2 class="title">Evos Legend</h2>
+    </div>
+    <form class="form" (ngSubmit)="onSubmit()">
+      <div class="input_container">
+        <label class="input_label" for="nickname">Nick Name</label>
+        <input
+          type="text"
+          name="nickname"
+          required
+          [(ngModel)]="playerData.nickname"
+          class="input_field"
+          placeholder="Nick Name"
+        />
+      </div>
+      <div class="input_container">
+        <label class="input_label" for="origin">Origin Name</label>
+        <input
+          type="text"
+          name="origin"
+          required
+          [(ngModel)]="playerData.origin"
+          class="input_field"
+          placeholder="Origin Name"
+        />
+      </div>
+      <div class="input_container">
+        <label class="input_label" for="age">Player Age</label>
+        <input
+          type="text"
+          name="age"
+          required
+          [(ngModel)]="playerData.age"
+          class="input_field"
+          placeholder="Player Age"
+        />
+      </div>
+      <div class="input_container">
+        <label class="input_label" for="hero">Player Favorite Hero</label>
+        <input
+          type="text"
+          name="hero"
+          required
+          [(ngModel)]="playerData.hero"
+          class="input_field"
+          placeholder="Player Favorite Hero"
+        />
+      </div>
+      <div class="input_container">
+        <label class="input_label" for="imageUrl">Image Url</label>
+        <input
+          type="text"
+          name="imageUrl"
+          required
+          [(ngModel)]="playerData.imageUrl"
+          class="input_field"
+          placeholder="Image Url"
+        />
+      </div>
+      <div class="input_container">
+        <label class="input_label" for="imageUrl">Player Bio</label>
+        <textarea
+          type="text"
+          name="bio"
+          required
+          [(ngModel)]="playerData.bio"
+          class="player-bio"
+          placeholder="Player Bio"
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="sign-in_btn"
+        (ngSubmit)="onSubmit()"
+        style="margin-top: 20px"
+      >
+        {{ isNewPlayer ? "Add Player" : "Edit Player" }}
+      </button>
+    </form>
+  </div>
+</div>
