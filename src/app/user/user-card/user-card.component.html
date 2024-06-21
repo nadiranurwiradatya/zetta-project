@@ -1,0 +1,23 @@
+<div class="card" style="min-height: 13rem" (click)="goToDetailUser(user.id)">
+  <div class="container">
+    <div class="col-md-4">
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/019/879/186/original/user-icon-on-transparent-background-free-png.png"
+        class="card-img"
+        style="width: 60px; height: 40px; margin-top: 40px"
+        alt="..."
+      />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ user.name }}</h5>
+        <p class="card-text">
+          {{ user.email }}
+        </p>
+        <p class="card-text">
+          <small class="text-muted">{{ user.company.name }}</small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

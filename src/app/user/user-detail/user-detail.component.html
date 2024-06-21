@@ -1,0 +1,94 @@
+<section
+  class="py-5"
+  style="min-height: 98vh; padding-bottom: 1rem; background-color: #e8e8e8"
+>
+  <div class="container">
+    <div class="semi-container">
+      <div class="image">
+        <p class="user" style="padding: 10px">user ID : {{ user.id }}</p>
+        <h1 class="name" style="font-family: poppins; margin-left: 50px">
+          {{ user.name }}
+        </h1>
+        <img
+          class="card-img-top mb-5 mb-md-0"
+          src="https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png"
+          [alt]="user.name"
+          style="
+            margin-top: 5px;
+            width: 21rem;
+            margin-left: 50px;
+            background-color: rgb(123, 123, 123);
+            border: solid 1px black;
+          "
+        />
+        <div class="button">
+          <button
+            class="btn"
+            style="margin-left: 50px; width: 90px"
+            [routerLink]="['/user/form']"
+            [queryParams]="{ id: user.id }"
+          >
+            Edit
+          </button>
+          <button
+            class="btn"
+            style="margin-left: 10px; margin-top: 10px; width: 90px"
+            (click)="onDeleteUser(user.id)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+      <div class="">
+        <div
+          class="container-2"
+          style="
+            height: 300px;
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            padding: 20px;
+            width: 500px;
+            top: 80px;
+            left: 400px;
+            font-family: poppins;
+          "
+        >
+          <div class="bio-container">
+            <h2 class="title">Basic Information</h2>
+            <div class="info" style="margin-left: 50px">
+              <div class="username">
+                <p><b>Username : </b>{{ user.username }}</p>
+              </div>
+              <div class="email">
+                <p><b>Email : </b>{{ user.email }}</p>
+              </div>
+              <div class="phone">
+                <p><b>Phone : </b>{{ user.phone }}</p>
+              </div>
+              <div class="website">
+                <p><b>Website : </b>{{ user.website }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="address-container" style="margin-top: 20px">
+            <h3 class="user-address">User address</h3>
+            <div class="info" style="margin-left: 50px">
+              <div class="street">
+                <p><b>Street : </b>{{ user.address.street }}</p>
+              </div>
+              <div class="suite">
+                <p><b>Suite : </b>{{ user.address.suite }}</p>
+              </div>
+              <div class="city">
+                <p><b>City : </b>{{ user.address.city }}</p>
+              </div>
+              <div class="zipcode">
+                <p><b>Zipcode : </b>{{ user.address.zipcode }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

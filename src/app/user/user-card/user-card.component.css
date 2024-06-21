@@ -1,0 +1,32 @@
+.container {
+  margin-top: 30px;
+}
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.125); /* warna border */
+  border-radius: 0.25rem; /* sudut border */
+  transition: box-shadow 0.3s ease; /* efek transition saat hover */
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* shadow saat hover */
+}
+
+.card-img {
+  width: 100%; /* lebar gambar */
+  height: auto; /* tinggi gambar menyesuaikan */
+  border-top-left-radius: 0.25rem; /* sudut border gambar */
+  border-bottom-left-radius: 0.25rem; /* sudut border gambar */
+}
+
+.card-title {
+  font-size: 1.25rem; /* ukuran font judul */
+  margin-bottom: 0.5rem; /* margin bawah judul */
+}
+
+.card-text {
+  margin-bottom: 0.5rem; /* margin bawah teks */
+}
+
+.text-muted {
+  color: #6c757d; /* warna teks abu-abu */
+}

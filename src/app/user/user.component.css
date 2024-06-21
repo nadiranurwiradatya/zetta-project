@@ -1,0 +1,61 @@
+.container {
+  max-width: 1200px; /* Atur lebar maksimum container */
+  margin: 0 auto; /* Pusatkan container */
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.search {
+  margin-top: 100px;
+  width: 400px;
+  height: 30px;
+}
+
+.form-control {
+  width: 100%;
+  max-width: 500px; /* Atur lebar maksimum input */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-lg-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+.col-md-12 {
+  flex: 0 0 50%;
+  margin-left: 5px;
+  max-width: 300px;
+  background-color: bisque;
+}
+.col-md-12:hover {
+  background-color: rgb(255, 219, 196);
+  outline: solid 2px;
+}
+.mb-4 {
+  margin-bottom: 5px; /* Atur margin bottom antar user card */
+}
+
+/* Style untuk user card bisa disesuaikan dengan kebutuhan */
+
+/* Style untuk bagian input search */
+.placeholder {
+  color: #aaa; /* Warna teks placeholder */
+}
+
+/* Style untuk bagian background */
+section {
+  padding: 50px 0; /* Atur padding atas dan bawah */
+}

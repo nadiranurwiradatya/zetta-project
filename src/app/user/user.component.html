@@ -1,0 +1,21 @@
+<section style="background-color: #b7b7b7; min-height: 100vh">
+  <div
+    class="container"
+    style="text-align: center; padding-top: 5px; font-family: poppins"
+  >
+    <div class="d-flex justify-content-center">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        class="search"
+        style="margin-bottom: 70px; border-radius: 5px"
+        placeholder="Search"
+      />
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-12 mb-4" *ngFor="let user of filteredUser">
+        <app-user-card [user]="user"></app-user-card>
+      </div>
+    </div>
+  </div>
+</section>

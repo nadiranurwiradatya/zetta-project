@@ -1,0 +1,33 @@
+/* .bio-container,
+.address-container {
+  font-family: poppins;
+  padding: 0 1rem; 
+}
+
+.row {
+  display: flex;
+}
+
+.bio-container {
+  background-color: rgb(194, 201, 193);
+  margin-top: 90px;
+  height: 300px;
+}
+.address-container {
+  background-color: rgb(194, 201, 193);
+  margin-top: 90px;
+  margin-left: 50px;
+  height: 300px;
+  width: 200px;
+  flex: 1; 
+}
+
+.card-img-top {
+  width: 18rem;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+} */

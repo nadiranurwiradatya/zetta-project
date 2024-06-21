@@ -1,0 +1,448 @@
+<h1
+  style="
+    margin: 0;
+    background-color: #b7b7b7;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: rgb(0, 0, 0);
+  "
+>
+  {{ id ? "EDIT FORM" : "ADD FORM" }}
+</h1>
+
+<form
+  [formGroup]="userForm"
+  (ngSubmit)="onSubmit()"
+  style="background-color: #b7b7b7"
+>
+  <div
+    class="px-5"
+    style="
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding-bottom: 5rem;
+    "
+  >
+    <div class="row">
+      <!-- <h3 class="mt-5 text-white">Basic Information</h3> -->
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            formControlName="name"
+            class="form-control"
+            id="name"
+            [class.is-invalid]="
+              userForm.get('name').touched && userForm.get('name').invalid
+            "
+            [class.is-valid]="
+              userForm.get('name').touched && userForm.get('name').valid
+            "
+          />
+          <div
+            *ngIf="
+              userForm.get('name').touched &&
+              userForm.get('name').hasError('required')
+            "
+            class="text-danger error-message"
+          >
+            Name is required
+          </div>
+          <!-- <div
+            *ngIf="
+              userForm.get('name').touched &&
+              userForm.get('name').hasError('invalidInput')
+            "
+            class="text-danger error-message"
+          >
+            Name must a valid
+          </div> -->
+        </div>
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            formControlName="username"
+            class="form-control"
+            id="username"
+            [class.is-invalid]="
+              userForm.get('username').touched &&
+              userForm.get('username').invalid
+            "
+            [class.is-valid]="
+              userForm.get('username').touched && userForm.get('username').valid
+            "
+          />
+          <div
+            *ngIf="
+              userForm.get('username').touched &&
+              userForm.get('username').hasError('required')
+            "
+            class="text-danger error-message"
+          >
+            Username is required
+          </div>
+          <!-- <div
+            *ngIf="
+              userForm.get('username').touched &&
+              userForm.get('username').hasError('invalidInput')
+            "
+            class="text-danger error-message"
+          >
+            Email must a valid email
+          </div> -->
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            formControlName="email"
+            class="form-control"
+            id="email"
+            [class.is-invalid]="
+              userForm.get('email').touched && userForm.get('email').invalid
+            "
+            [class.is-valid]="
+              userForm.get('email').touched && userForm.get('email').valid
+            "
+          />
+          <div
+            *ngIf="
+              userForm.get('email').touched &&
+              userForm.get('email').hasError('required')
+            "
+            class="text-danger error-message"
+          >
+            Email is required
+          </div>
+          <!-- <div
+            *ngIf="
+              userForm.get('email').touched &&
+              userForm.get('email').hasError('invalidInput')
+            "
+            class="text-danger error-message"
+          >
+            Email must a valid email
+          </div> -->
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input
+            type="text"
+            formControlName="phone"
+            class="form-control"
+            id="phone"
+            [class.is-invalid]="
+              userForm.get('phone').touched && userForm.get('phone').invalid
+            "
+            [class.is-valid]="
+              userForm.get('phone').touched && userForm.get('phone').valid
+            "
+          />
+          <div
+            *ngIf="
+              userForm.get('phone').touched &&
+              userForm.get('phone').hasError('required')
+            "
+            class="text-danger error-message"
+          >
+            Phone is required
+          </div>
+          <!-- <div
+            *ngIf="
+              userForm.get('phone').touched &&
+              userForm.get('phone').hasError('pattern')
+            "
+            class="text-danger error-message"
+          >
+            Image can only accept (.gif,jpg,jpeg,tiff,png,webp,bmp)
+          </div> -->
+        </div>
+
+        <div formGroupName="company">
+          <div class="form-group">
+            <label for="name">Company Name</label>
+            <input
+              type="text"
+              formControlName="name"
+              class="form-control"
+              id="name"
+              [class.is-invalid]="
+                userForm.get('company.name').touched &&
+                userForm.get('company.name').invalid
+              "
+              [class.is-valid]="
+                userForm.get('company.name').touched &&
+                userForm.get('company.name').valid
+              "
+            />
+            <div
+              *ngIf="
+                userForm.get('company.name').touched &&
+                userForm.get('company.name').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Company is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="catchPhrase">Catch Phrase</label>
+            <input
+              type="string"
+              formControlName="catchPhrase"
+              class="form-control"
+              id="catchPhrase"
+              [class.is-invalid]="
+                userForm.get('company.catchPhrase').touched &&
+                userForm.get('company.catchPhrase').invalid
+              "
+              [class.is-valid]="
+                userForm.get('company.catchPhrase').touched &&
+                userForm.get('company.catchPhrase').valid
+              "
+            />
+            <div
+              *ngIf="
+                userForm.get('company.catchPhrase').touched &&
+                userForm.get('company.catchPhrase').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Catch Phrase is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="bs">Boostsrap</label>
+            <input
+              type="text"
+              formControlName="bs"
+              class="form-control"
+              id="bs"
+              [class.is-invalid]="
+                userForm.get('company.bs').touched &&
+                userForm.get('company.bs').invalid
+              "
+              [class.is-valid]="
+                userForm.get('company.bs').touched &&
+                userForm.get('company.bs').valid
+              "
+            />
+            <div
+              *ngIf="
+                userForm.get('company.bs').touched &&
+                userForm.get('company.bs').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Boostsrap is required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="form-group">
+          <label for="website">Website</label>
+          <input
+            type="string"
+            formControlName="website"
+            class="form-control"
+            id="website"
+            [class.is-invalid]="
+              userForm.get('website').touched && userForm.get('website').invalid
+            "
+            [class.is-valid]="
+              userForm.get('website').touched && userForm.get('website').valid
+            "
+          />
+          <div
+            *ngIf="
+              userForm.get('website').touched &&
+              userForm.get('website').hasError('required')
+            "
+            class="text-danger error-message"
+          >
+            Website is required
+          </div>
+          <!-- <div
+            *ngIf="
+              userForm.get('age').touched &&
+              userForm.get('age').hasError('pattern')
+            "
+            class="text-danger error-message"
+          >
+            Age must a valid number
+          </div> -->
+        </div>
+        <div formGroupName="address">
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input
+              type="text"
+              formControlName="street"
+              class="form-control"
+              id="street"
+              [class.is-invalid]="
+                userForm.get('address.street').touched &&
+                userForm.get('address.street').invalid
+              "
+              [class.is-valid]="
+                userForm.get('address.street').touched &&
+                userForm.get('address.street').valid
+              "
+            />
+            <div
+              *ngIf="
+                userForm.get('address.street').touched &&
+                userForm.get('address.street').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Street is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="suite">Suite</label>
+            <input
+              type="string"
+              formControlName="suite"
+              class="form-control"
+              id="suite"
+              [class.is-invalid]="
+                userForm.get('address.suite').touched &&
+                userForm.get('address.suite').invalid
+              "
+              [class.is-valid]="
+                userForm.get('address.suite').touched &&
+                userForm.get('address.suite').valid
+              "
+            />
+            <div
+              *ngIf="
+                userForm.get('address.suite').touched &&
+                userForm.get('address.suite').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Suite is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input
+              type="text"
+              formControlName="city"
+              class="form-control"
+              id="city"
+              [class.is-invalid]="
+                userForm.get('address.city').touched &&
+                userForm.get('address.city').invalid
+              "
+              [class.is-valid]="
+                userForm.get('address.city').touched &&
+                userForm.get('address.city').valid
+              "
+            />
+            <div
+              *ngIf="
+                userForm.get('address.city').touched &&
+                userForm.get('address.city').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              City is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="zipcode">Zipcode</label>
+            <input
+              type="text"
+              formControlName="zipcode"
+              class="form-control"
+              id="zipcode"
+              [class.is-invalid]="
+                userForm.get('address.zipcode').touched &&
+                userForm.get('address.zipcode').invalid
+              "
+              [class.is-valid]="
+                userForm.get('address.zipcode').touched &&
+                userForm.get('address.zipcode').valid
+              "
+            />
+            <div
+              *ngIf="
+                userForm.get('address.zipcode').touched &&
+                userForm.get('address.zipcode').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Zipcode is required
+            </div>
+          </div>
+
+          <div formGroupName="geo">
+            <div class="form-group">
+              <label for="lat">Latitude</label>
+              <input
+                type="text"
+                formControlName="lat"
+                class="form-control"
+                id="lat"
+                [class.is-invalid]="
+                  userForm.get('address.geo.lat').touched &&
+                  userForm.get('address.geo.lat').invalid
+                "
+                [class.is-valid]="
+                  userForm.get('address.geo.lat').touched &&
+                  userForm.get('address.geo.lat').valid
+                "
+              />
+              <div
+                *ngIf="
+                  userForm.get('address.geo.lat').touched &&
+                  userForm.get('address.geo.lat').hasError('required')
+                "
+                class="text-danger error-message"
+              >
+                Latitude is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="lng">Longitude</label>
+              <input
+                type="text"
+                formControlName="lng"
+                class="form-control"
+                id="lng"
+                [class.is-invalid]="
+                  userForm.get('address.geo.lng').touched &&
+                  userForm.get('address.geo.lng').invalid
+                "
+                [class.is-valid]="
+                  userForm.get('address.geo.lng').touched &&
+                  userForm.get('address.geo.lng').valid
+                "
+              />
+              <div
+                *ngIf="
+                  userForm.get('address.geo.lng').touched &&
+                  userForm.get('address.geo.lng').hasError('required')
+                "
+                class="text-danger error-message"
+              >
+                Longitude is required
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary w-25 mt-5">Submit</button>
+    </div>
+  </div>
+</form>
